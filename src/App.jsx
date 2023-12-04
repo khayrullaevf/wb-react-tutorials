@@ -1,23 +1,14 @@
 
 import './App.css'
-import ComponentA from './Components/ComponentA';
+import Fruits from './Components/homewrok/Friuts';
 
 function App() {
 
 
-  const people = [
-    { id: 1, name: "Fazliddin", status: "student" },
-    { id: 2, name: "Leo", status: "footballer" },
-    { id: 3, name: "Azam", status: "teacher" },
-  ];
+ 
   return (
     <>
-      {
-      people.map((person,index)=>(
-        <ComponentA key={index} data={person}/>
-      ))
-
-      }
+    <Fruits/>
     </>
   );
 }
