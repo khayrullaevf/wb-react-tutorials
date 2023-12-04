@@ -10,3 +10,8 @@
 
 //=======================
 //ikkinchi dars
+//class components
+//import
+//export
+//props , children
+//components
