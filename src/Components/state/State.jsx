@@ -5,13 +5,14 @@ class State extends Component {
     super(props);
     this.state = {
       count: 0,
-      title: "React JS",
+      name:'Fazliddin',
+      surname:'Khayrullaev'
     };
   }
 
   render() {
     console.log('re-render');
-    const { count, title } = this.state;
+    const { count, name,surname } = this.state;
     const plus = () => {
       this.setState({ count: this.state.count + 1 });
     };
@@ -19,11 +20,16 @@ class State extends Component {
       this.setState({ count: this.state.count - 1 });
     };
 
-    const handleInput=(e)=>{
+    const handleName=(e)=>{
       this.setState({
-        title:e.target.value.trim()
+        name:e.target.value.trim()
       })
     }
+      const handleSurname = (e) => {
+        this.setState({
+          surname: e.target.value.trim(),
+        });
+      };
    const onSelect=(e)=>{
     console.log(e.target.value);
 
@@ -34,12 +40,14 @@ class State extends Component {
    }
     return (
       <div>
-        <h1>{title}</h1>
+        <h1>name: {name}</h1>
+        <h1>surname:{surname}</h1>
         <h1>State:{count}</h1>
         <button onClick={plus}>+</button>
         <button onClick={minus}>-</button>
 
-        <input onChange={handleInput} type="text" placeholder="Enter title" />
+        <input onChange={handleName} type="text" placeholder="Enter name" />
+        <input onChange={handleSurname} type="text" placeholder="Enter surname" />
         <select onChange={onSelect} name="" id="">
           <option value="male">male</option>
           <option value="female">female</option>
