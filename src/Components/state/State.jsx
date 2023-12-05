@@ -25,7 +25,7 @@ class State extends Component {
     }
     const onFilter=(e)=>{
       console.log(e.target.value.trim());
-      let res=students.filter((person)=>person.name.toLowerCase().includes(e.target.value.trim()))
+      let res=students.filter((person)=>person.name.toLowerCase().includes(e.target.value.trim().toLowerCase()))
       this.setState({
         data:res
       })
@@ -57,6 +57,7 @@ class State extends Component {
               </h1>
               <h2>{surname}</h2>
               <h2>{status}</h2>
+              <button>delete</button>
             </div>
           ))}
           <hr />
