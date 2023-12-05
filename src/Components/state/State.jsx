@@ -1,58 +1,66 @@
 import { Component } from "react";
 
+import { students } from "./mock";
+import './State.css'
+
 class State extends Component {
   constructor(props) {
     super(props);
     this.state = {
       count: 0,
       name:'Fazliddin',
-      surname:'Khayrullaev'
+      surname:'Khayrullaev',
+      data:students,
     };
   }
 
   render() {
     console.log('re-render');
-    const { count, name,surname } = this.state;
-    const plus = () => {
-      this.setState({ count: this.state.count + 1 });
-    };
-    const minus = () => {
-      this.setState({ count: this.state.count - 1 });
-    };
-
-    const handleName=(e)=>{
+    const {data,name,surname} = this.state;
+    const handleInput=(e)=>{
       this.setState({
-        name:e.target.value.trim()
+        [e.target.name]:e.target.value.trim()
       })
+      console.log(e.target.name);
     }
-      const handleSurname = (e) => {
-        this.setState({
-          surname: e.target.value.trim(),
-        });
-      };
-   const onSelect=(e)=>{
-    console.log(e.target.value);
+    const onFilter=(e)=>{
+      console.log(e.target.value.trim());
+      let res=students.filter((person)=>person.name.toLowerCase().includes(e.target.value.trim()))
+      this.setState({
+        data:res
+      })
 
-   }
-   const onCheck=(e)=>{
-    console.log(e.target.checked);
-
-   }
+    }
     return (
       <div>
         <h1>name: {name}</h1>
         <h1>surname:{surname}</h1>
-        <h1>State:{count}</h1>
-        <button onClick={plus}>+</button>
-        <button onClick={minus}>-</button>
-
-        <input onChange={handleName} type="text" placeholder="Enter name" />
-        <input onChange={handleSurname} type="text" placeholder="Enter surname" />
-        <select onChange={onSelect} name="" id="">
-          <option value="male">male</option>
-          <option value="female">female</option>
-        </select>
-        <input onChange={onCheck} type="checkbox" name="" id="" />
+        <input
+          onChange={handleInput}
+          name="name"
+          type="text"
+          placeholder="Enter name"
+        />
+        <input
+          onChange={handleInput}
+          name="surname"
+          type="text"
+          placeholder="Enter surname"
+        />
+        <input type="text" placeholder="Filter" onChange={onFilter} />
+        <div className="students">
+          <hr />
+          {data.map(({ id, name, surname, status }, index) => (
+            <div className="student" key={index}>
+              <h1>
+                {id}.{name}
+              </h1>
+              <h2>{surname}</h2>
+              <h2>{status}</h2>
+            </div>
+          ))}
+          <hr />
+        </div>
       </div>
     );
   }

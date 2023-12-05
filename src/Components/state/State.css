@@ -1,0 +1,15 @@
+.students{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 50px;
+}
+
+.student{
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+}
