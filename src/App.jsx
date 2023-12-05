@@ -1,6 +1,6 @@
 
 import './App.css'
-import Fruits from './Components/homewrok/Friuts';
+import State from './Components/state/State';
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
  
   return (
     <>
-    <Fruits/>
+   <State/>
     </>
   );
 }
