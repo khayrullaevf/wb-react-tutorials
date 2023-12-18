@@ -1,6 +1,6 @@
 
 import './App.css'
-import State from './Components/state/State';
+import StyledComponentA from './Components/StyledComponentA';
 
 function App() {
 
@@ -8,7 +8,8 @@ function App() {
  
   return (
     <>
-   <State/>
+
+    <StyledComponentA/>
     </>
   );
 }
