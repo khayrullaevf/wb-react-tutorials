@@ -1,6 +1,5 @@
 
 import './App.css'
-import StyledComponentA from './Components/StyledComponentA';
 
 function App() {
 
@@ -9,7 +8,9 @@ function App() {
   return (
     <>
 
-    <StyledComponentA/>
+    <h1>Lesson-7</h1>
+
+  
     </>
   );
 }

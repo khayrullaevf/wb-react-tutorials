@@ -26,3 +26,22 @@
 
 //=======================
 //tortinchi dars
+//function call
+//multi state change
+//student list =>add delte filter
+
+
+//=========================
+//=========================
+//Beshinchi dars
+//styled component
+//{css}
+//props
+//function call
+
+//=========================
+//=========================
+//oltinchi dars
+//keyframes-animation
+//prototype
+
